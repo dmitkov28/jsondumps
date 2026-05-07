@@ -1,0 +1,16 @@
+[project]
+name = "jsondumps"
+version = "0.1.0"
+description = "Backend for jsondumps"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "feedparser>=6.0.12",
+    "httpx>=0.28.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "ruff>=0.15.12",
+]
