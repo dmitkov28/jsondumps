@@ -8,7 +8,6 @@ from src.model import Source
 
 def get_lobsters(url: str = "https://lobste.rs/top/1d/rss", parser_fn=feedparser.parse):
     response = parser_fn(url)
-    breakpoint()
     entries = response.get("entries")
     return [
         Source(
