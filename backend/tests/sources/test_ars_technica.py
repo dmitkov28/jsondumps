@@ -1,4 +1,4 @@
-from src.ars_technica import get_ars_technica
+from src.sources.ars_technica import get_ars_technica
 from src.model import Source
 
 
