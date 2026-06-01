@@ -1,0 +1,14 @@
+[project]
+name = "core"
+version = "0.1.0"
+description = "jsondumps core package"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["feedparser>=6.0.12", "httpx>=0.28.1", "selectolax>=0.4.10"]
+
+[dependency-groups]
+dev = ["pytest>=9.0.3", "ruff>=0.15.12"]
+
+
+[tool.ruff.lint]
+select = ["T100"]

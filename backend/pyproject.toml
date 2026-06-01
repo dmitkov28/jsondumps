@@ -1,21 +1,17 @@
 [project]
-name = "jsondumps"
+name = "jsondumps_workspace"
 version = "0.1.0"
-description = "Backend for jsondumps"
+description = "Workspace for jsondumps"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "feedparser>=6.0.12",
-    "httpx>=0.28.1",
-    "selectolax>=0.4.10",
-]
+dependencies = ["core"]
 
-[dependency-groups]
-dev = [
-    "pytest>=9.0.3",
-    "ruff>=0.15.12",
-]
+[tool.uv.sources]
+core = { workspace = true }
+api = { workspace = true }
 
+[tool.uv.workspace]
+members = ["packages/*"]
 
 [tool.ruff.lint]
 select = ["T100"]
