@@ -1,9 +1,8 @@
 import time
 
 import httpx
+from core.model import Source
 from selectolax.parser import HTMLParser
-
-from src.model import Source
 
 
 def get_trending_repos(url: str = "https://github.com/trending") -> list[Source]:

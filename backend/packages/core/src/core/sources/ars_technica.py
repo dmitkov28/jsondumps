@@ -2,9 +2,9 @@ import calendar
 import time
 from typing import Any
 
-import feedparser
+from core.model import Source
 
-from src.model import Source
+import feedparser
 
 
 def get_ars_technica(

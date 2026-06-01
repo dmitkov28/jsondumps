@@ -2,11 +2,10 @@ import calendar
 import time
 
 import feedparser
+from core.model import Source
 
-from src.model import Source
 
-
-def get_lobsters(url: str = "https://lobste.rs/top/1d/rss", parser_fn=feedparser.parse):
+def get_hn(url: str = "https://hnrss.org/frontpage", parser_fn=feedparser.parse):
     response = parser_fn(url)
     entries = response.get("entries")
     return [
@@ -18,11 +17,7 @@ def get_lobsters(url: str = "https://lobste.rs/top/1d/rss", parser_fn=feedparser
                 else int(time.time())
             ),
             url=str(entry["guid"]),
-            tags=[tag.get("term") for tag in entry.get("tags", [])],
+            tags=[],
         )
         for entry in entries
     ]
-
-
-if __name__ == "__main__":
-    print(get_lobsters())
